@@ -1,8 +1,13 @@
+import java.awt.BorderLayout;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 
 public class Program {
 
 	public static void main(String[] args) {
-		ExampleFrame frame = new ExampleFrame();
-		frame.setVisible(true);
+		ExampleFrame myFrame = new ExampleFrame();
+		myFrame.setVisible(true);
 	}
+	
 }
