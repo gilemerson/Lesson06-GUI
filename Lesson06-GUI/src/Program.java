@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -10,15 +11,11 @@ public class Program {
 
 	public static void main(String[] args) {
 		
-		/*
+		
 		ExampleFrame myFrame = new ExampleFrame();
 		myFrame.setVisible(true);
-		*/
 		
-		String firstName;
-		String lastName;
-		int messageReturn;
-		
+		Dimension dialogDimensions = new Dimension(500, 300);
 		//firstName =  JOptionPane.showInputDialog("Enter Your First Name:");	
 		//lastName =  JOptionPane.showInputDialog("Enter Your Last Name:");
 		
@@ -29,9 +26,11 @@ public class Program {
 		
 		
 		//EnstansiTE Object
-		MyDialog myDialog = new MyDialog();
-		myDialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-		myDialog.setVisible(true);
+		myFrame.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+		myFrame.setSize(dialogDimensions);
+		myFrame.setMinimumSize(dialogDimensions);
+		myFrame.setMaximumSize(dialogDimensions);
+		myFrame.setVisible(true);
 	}
 	
 }

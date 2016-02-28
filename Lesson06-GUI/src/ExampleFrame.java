@@ -1,18 +1,19 @@
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+import java.awt.FlowLayout;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
+import javax.swing.SwingConstants;
+
+import Assets.*;
+
 import javax.swing.JLabel;
 
 public class ExampleFrame extends JFrame {
 
 	//Private Instance Variable
-	private JPanel _contentPanel;
-	private EmptyBorder _myEmptyBorder;
-	private BorderLayout _myBorderLayout;
 	private JLabel _firstNameLabel;
+	private Icon _gil;
 
 	/**
 	 * Create the frame.
@@ -20,21 +21,20 @@ public class ExampleFrame extends JFrame {
 	 */
 	//Private Method
 	public ExampleFrame() {
+		super("Example Frame");
 		_initialize();
 	}
 
 	private void _initialize() {
-		this._myEmptyBorder = new EmptyBorder(5, 5, 5, 5);
-		this._myBorderLayout = new BorderLayout(0, 0);
 		
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		this._contentPanel = new JPanel();
-		this._contentPanel.setBorder(this._myEmptyBorder);
-		this._contentPanel.setLayout(this._myBorderLayout);
-		setContentPane(this._contentPanel);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setBounds(100, 100, 450, 300);
+		getContentPane().setLayout(new FlowLayout());
 		
-		this._firstNameLabel = new JLabel("First Name:");
-		this._contentPanel.add(this._firstNameLabel, BorderLayout.NORTH);
+	    this._gil = new ImageIcon(ExampleFrame.class.getResource("/Assets/gil.jpg"));
+		
+		this._firstNameLabel = new JLabel("First Name: ", SwingConstants.CENTER);
+		this._firstNameLabel.setIcon(this._gil);//Set Gil Image
+		getContentPane().add(this._firstNameLabel);
 	}
 }
